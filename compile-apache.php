@@ -18,8 +18,10 @@ function debug($text, $context) {
 	print "/** DEBUG: $text, on line {$context->node->token->line} of {$context->node->token->filename} **/\n";
 }
 
-
-$file = $_SERVER['DOCUMENT_ROOT'] . $_SERVER['PATH_INFO'];
+if(UseQueryString)
+	$file = $_SERVER['DOCUMENT_ROOT'] . $_SERVER['QUERY_STRING'];
+else
+	$file = $_SERVER['DOCUMENT_ROOT'] . $_SERVER['PATH_INFO'];
 $syntax = substr($file, -4, 4);
 
 $options = array(
