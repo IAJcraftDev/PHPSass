@@ -1,7 +1,12 @@
 #PHPSass [![build status](https://travis-ci.org/richthegeek/phpsass.png)](https://travis-ci.org/richthegeek/phpsass)
 
-#IMPORTANT NOTICE
-I'm not involved with PHP development anymore, and just don't have the time to do much more than approve pull requests for this project. I'm happy to stick around as a hands-off dictator, but if there are others who wish to take over maintainership then please get in touch ([my username]@gmail.com).
+## Use PHPSass with Apache
+1. Copy/clone the file in the folder of your choice. (example: "sass")
+2. Enable mod_actions. (command: "a2enmod actions")
+3. Enable .htaccess files in /var/apache2/sites-enabled/*: Add line "AllowOverride All" in the VirtualHost
+4. Reload Apache server. (command: "service apache2 restart")
+4. Create an .htaccess in the folder where you can find the Sass/SCSS files. Put the code below inside:
+`Action compile-sass /git/phpsass/compile-apache.php`
 
 ## About
 This is fork of PHamlP primarily for inclusiong as a Drupal pre-processor.
