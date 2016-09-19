@@ -1,3 +1,4 @@
 <?php
 
-define("UseQueryString", false);
+// Apache Compiler
+  define("UseQueryString", false);
