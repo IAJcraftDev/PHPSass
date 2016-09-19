@@ -1,0 +1,3 @@
+<?php
+
+define("UseQueryString", false);
