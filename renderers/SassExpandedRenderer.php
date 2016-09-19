@@ -52,7 +52,7 @@ class SassExpandedRenderer extends SassCompactRenderer
       $line = trim($line);
     }
 
-    return "$indent/*\n$indent * ".join("\n$indent * ", $lines)."\n$indent */".(empty($indent)?"\n":'');
+    return "$indent/*\n".join("\n$indent ", $lines)."\n$indent */".(empty($indent)?"\n":'');
   }
 
   /**
