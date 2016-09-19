@@ -22,6 +22,7 @@
  * @subpackage  Sass
  */
 
+require_once 'config.php';
 require_once 'SassLoader.php';
 #require_once 'SassFile.php';
 #require_once 'SassException.php';
