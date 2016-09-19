@@ -51,9 +51,13 @@ class SassCompactRenderer extends SassCompressedRenderer
    */
   public function renderComment($node)
   {
-    $nl = ($node->parent instanceof SassRuleNode?'':"\n");
+    $indent = $this->getIndent($node);
+    $lines = explode("\n", $node->value);
+    foreach ($lines as &$line) {
+      $line = trim($line);
+    }
 
-    return "$nl/* " . join("\n * ", $node->children) . " */$nl" ;
+    return "\n/* " . join("\n ", $lines) . "\n */\n\n" ;
   }
 
   /**
