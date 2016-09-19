@@ -5,8 +5,15 @@
 2. Enable mod_actions. (command: "a2enmod actions")
 3. Enable .htaccess files in /var/apache2/sites-enabled/*: Add line "AllowOverride All" in the VirtualHost
 4. Reload Apache server. (command: "service apache2 restart")
-4. Create an .htaccess in the folder where you can find the Sass/SCSS files. Put the code below inside:
-`Action compile-sass /git/phpsass/compile-apache.php`
+4. Create an .htaccess in the folder where you can find the Sass/SCSS files. Put inside the two lines below:
+
+`Action compile-sass /<NameOfFolder>/compile-apache.php` (`<NameOfFolder>` is the chosen folder in Step 1)
+
+`AddHandler compile-sass .sass .scss`
+
+_If you get an 404 ERROR, enable UseQueryString in the config.php file._
+
+**Info: If you enabled UseQueryString in the config.php file, add a question mark after `compile-apache.php`**
 
 ## About
 This is fork of PHamlP primarily for inclusiong as a Drupal pre-processor.
